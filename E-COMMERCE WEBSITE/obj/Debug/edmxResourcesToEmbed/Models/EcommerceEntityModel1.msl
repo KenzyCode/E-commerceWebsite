@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ecommerceDatabaseModelsStoreContainer" CdmEntityContainer="ecommerceDatabaseEntities">
+    <EntitySetMapping Name="ProductTables">
+      <EntityTypeMapping TypeName="ecommerceDatabaseModels.ProductTable">
+        <MappingFragment StoreEntitySet="ProductTable">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Categories" ColumnName="Categories" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductAmt" ColumnName="ProductAmt" />
+          <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+          <ScalarProperty Name="ProductCondition" ColumnName="ProductCondition" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductReviews" ColumnName="ProductReviews" />
+          <ScalarProperty Name="ImagePaths" ColumnName="ImagePaths" />
+          <ScalarProperty Name="ExtraimgPaths" ColumnName="ExtraimgPaths" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestPurchaseTables">
+      <EntityTypeMapping TypeName="ecommerceDatabaseModels.RequestPurchaseTable">
+        <MappingFragment StoreEntitySet="RequestPurchaseTable">
+          <ScalarProperty Name="CartProductQty" ColumnName="CartProductQty" />
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+          <ScalarProperty Name="ProductAmt" ColumnName="ProductAmt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="TrackingId" ColumnName="TrackingId" />
+          <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTables">
+      <EntityTypeMapping TypeName="ecommerceDatabaseModels.UserTable">
+        <MappingFragment StoreEntitySet="UserTable">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ShippingAddress" ColumnName="ShippingAddress" />
+          <ScalarProperty Name="CaedDetails" ColumnName="CaedDetails" />
+          <ScalarProperty Name="PurchaseHistory" ColumnName="PurchaseHistory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

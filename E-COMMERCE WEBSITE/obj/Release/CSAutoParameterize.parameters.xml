@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ecommerceEntity-Web.config Connection String" description="ecommerceEntity Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.EComEntityModel.csdl|res://*/Models.EComEntityModel.ssdl|res://*/Models.EComEntityModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=C:\Users\user\Documents\ecommerceDatabase.mdf;integrated security=True;multipleactiveresultsets=True;connect timeout=30;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\user\\source\\repos\\E-COMMERCE\ WEBSITESOLUTION\\E-COMMERCE\ WEBSITE\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ecommerceEntity']/@connectionString" />
+  </parameter>
+  <parameter name="ecommercewebsiteDatabaseEntities-Web.config Connection String" description="ecommercewebsiteDatabaseEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.EcomEnitiyModel2.csdl|res://*/Models.EcomEnitiyModel2.ssdl|res://*/Models.EcomEnitiyModel2.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=C:\Users\user\Documents\ecommerceDatabase.mdf;integrated security=True;multipleactiveresultsets=True;connect timeout=30;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\user\\source\\repos\\E-COMMERCE\ WEBSITESOLUTION\\E-COMMERCE\ WEBSITE\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ecommercewebsiteDatabaseEntities']/@connectionString" />
+  </parameter>
+</parameters>

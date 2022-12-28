@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Homelayout.cshtml";
+}
+    <div class="container">
+        <!--this row houses the search button-->
+        <div class="row">
+
+        </div>
+        <!--search button ends here-->
+        <!--this row will house possible search results-->
+        <!--search result end here-->
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items">
+                        <!--features_items-->
+                        <h2 class="title text-center">Features Items</h2>
+                    <!--To loop through our individual products-->
+                         @foreach(var product in ViewBag.Products)
+                    {
+                        <!--We wrapped the product card in a like that linck to the product details view-->
+                               <a href="@Url.Action("ProductDetail","Home",product)">
+                              <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="@Url.Content(product.ImagePath)" alt="" class="img-fluid" />
+                                        <h2>$@product.ProductAmt</h2>
+                                        <p>@product.Brand @product.ProductName</p>
+                                        <p>@product.ProductDescription</p>
+                                        @if (ViewBag.User is null)
+                                        {
+                                            <a href="@Url.Action("AddProductLogin","Home", product)" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@Url.Action("AddProductToCart","Home", product)" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        }
+
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <h2>$56</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </a>
+                    }
+                       
+                            
+                </div>
+                        
+                </div>
+            </div>
+        </div>
+
+    </section>

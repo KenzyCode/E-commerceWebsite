@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ecommerceDatabaseModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ProductTable">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categories" Type="nvarchar(max)" />
+    <Property Name="Brand" Type="nvarchar(max)" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="ProductAmt" Type="money" />
+    <Property Name="ProductQty" Type="int" />
+    <Property Name="ProductCondition" Type="nvarchar(max)" />
+    <Property Name="ProductDescription" Type="nvarchar(max)" />
+    <Property Name="ProductReviews" Type="nvarchar(max)" />
+    <Property Name="ImagePaths" Type="nvarchar(max)" />
+    <Property Name="ExtraimgPaths" Type="nvarchar(max)" />
+    <Property Name="Rating" Type="money" />
+    <Property Name="Model" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RequestPurchaseTable">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="ProductQty" Type="int" />
+    <Property Name="ProductAmt" Type="money" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="DateRequested" Type="date" />
+    <Property Name="DeliveryStatus" Type="nchar" MaxLength="10" />
+    <Property Name="TrackingId" Type="int" />
+    <Property Name="DeliveryNote" Type="nvarchar(max)" />
+    <Property Name="CartProductQty" Type="int" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="ShippingAddress" Type="nvarchar(max)" />
+    <Property Name="CaedDetails" Type="nvarchar(max)" />
+    <Property Name="PurchaseHistory" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="ecommerceDatabaseModelsStoreContainer">
+    <EntitySet Name="ProductTable" EntityType="Self.ProductTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RequestPurchaseTable" EntityType="Self.RequestPurchaseTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

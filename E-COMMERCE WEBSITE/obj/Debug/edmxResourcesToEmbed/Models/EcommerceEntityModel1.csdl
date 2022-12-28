@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ecommerceDatabaseModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ProductTable">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductAmt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ProductQty" Type="Int32" />
+    <Property Name="ProductCondition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductReviews" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePaths" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraimgPaths" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rating" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RequestPurchaseTable">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="ProductQty" Type="Int32" />
+    <Property Name="ProductAmt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="DateRequested" Type="DateTime" Precision="0" />
+    <Property Name="DeliveryStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TrackingId" Type="Int32" />
+    <Property Name="DeliveryNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CartProductQty" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CaedDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PurchaseHistory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ecommerceDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ProductTables" EntityType="Self.ProductTable" />
+    <EntitySet Name="RequestPurchaseTables" EntityType="Self.RequestPurchaseTable" />
+    <EntitySet Name="UserTables" EntityType="Self.UserTable" />
+  </EntityContainer>
+</Schema>
